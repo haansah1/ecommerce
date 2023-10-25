@@ -2,21 +2,45 @@
     margin:0px;
     padding:0px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* overflow: hidden; */
 }
 header .first-header{
     display:flex;
     background-color: rgba(0, 0, 0, .85);
     color:white;
-    padding:12px;
-    justify-content: center;
+    padding:15px 0px 15px 12px;
     align-items: center;
+    position:relative;
+    height:40px;
+    max-width: 100vw;
     
+}
+
+::-webkit-scrollbar{
+    display:none;
 }
 .div1{
     display:flex;
-    gap:8vw;
+    gap:6.5vw;
+    text-align: center;
+    align-items: center;
+}
+.div1 div h4{
+    color:orange;
+}
+.div1 em{
+    color: orange;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-style: normal;
+    font-weight:bold;
 
 }
+em{
+    font-style: normal;
+}
+
 .cure{
     position:absolute;
     margin-right:1vw;
@@ -57,9 +81,31 @@ header .first-header{
 }
 #inp{
     height:40px;
-    width:50vw;
+    padding:20px;
+    width:30vw;
     border-radius:5px;
-    margin-left:10vw;
+    border:none;
+    
+}
+.div2{
+    position:absolute;
+    right:0;
+}
+.div2 button{
+    background: rgba(66, 253, 66, .5);
+    height:40px;
+    width:40px;
+    border:none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    transition: all .15s linear;
+}
+.div2 button:hover{
+    background: rgb(66, 253, 66);
+    outline: none;
+    transition: all .15s linear;
 }
 .second-header{
     height:43px;
@@ -68,51 +114,64 @@ header .first-header{
     display:flex;
     padding-left:20px;
     flex-direction:column;
-    /* align-items: center; */
     justify-content: center;
     position:relative;
-
+}
+#input{
+    visibility:hidden;
+    position:absolute;
+}
+.bars{
+    cursor:pointer;
 }
 .second-header a{
     color:white;
     text-decoration: none;
     padding:10px 11px 10px 11px;
-    
 }
 .second-header a:hover{
     outline:1px solid white;
     border-radius:1px;
-    /* outline-offset: 20px; */
+}
+.second-header .bar-row{
+    color:red;
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+    margin-top: 20px;
+    transition: all .4s linear;
+    transform: scaleY(0);
+    z-index: 1;
+}
+.second-header .bar-row a{
+    color: rgb(47, 45, 45);
+    background: rgba(128, 128, 128, .65);
+    width:85vw;
+    font-weight:600;
+    transition: transform .4s linear, background .4s linear, color .4s linear;
+}
+.second-header .bar-row a:hover{
+    background: rgba(128, 128, 128, .8);
+    outline:none;
+    transform:translateX(20px);
+    color:white;
+    transition: transform .4s linear, background .4s linear, color .4s linear, scaleY 3s linear;
+}
+.second-header .bar-row i{
+    color:white;
+    padding: 0px 0px 40px 0px;
+    cursor:pointer;
+}
+.bar-row2{
+    position:absolute;
+    visibility: hidden;
 }
 section{
-    /* height:80vh; */
-    background: url(./images/ecomg1.jpg) center/cover;
+    min-height:100vh;
+    background: url(./images/autoapps_cars_67160.jpeg) center/cover;
     background-attachment: fixed;
 }
-.caret{
-    display:flex;
-    height:45vh;
-    width:100vw;
-    font-size: 65px;
-    font-weight: lighter; 
-    /* padding:0px 20px 0px 20px; */
-    /* margin:20px */
-    /* justify-content: center; */
-    /* align-items: center; */
-    
-}
-.caret div{
-    display:flex;
-    width:50vw;
-    align-items: center;
-    padding:0px 20px 0px 20px;
-}
-.car1{
-    align-items: left;
-}
-.car2{
-    justify-content: right;
-}
+
 
 .carts-main{
     display:flex;
@@ -219,7 +278,6 @@ section{
     font-weight:bold;
     font-family : cursive;
     outline: 2px solid white;
-    /* box-shadow:1px 1px 8px  black; */
     outline-offset: -5px;
     transition: outline-offset .2s linear;
     border-radius:5px;
@@ -235,7 +293,7 @@ button:hover{
 /*checkout.css*/
 
 .checkout-body{
-    margin:15vh 10vw;
+    padding:15vh 10vw;
 }
 .checkout-div-main{
     gap:2em;
@@ -320,7 +378,7 @@ button:hover{
 .cart-div{
     background-color: white;
     box-shadow:1px 1px 4px black;
-    width:35vw;
+    min-width:35vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -359,7 +417,7 @@ button:hover{
     justify-content: center;
 }
 .product-div img{
-    object-fit: center;
+    object-fit: cover;
     width:100%;
     height:100%;
 }
@@ -369,4 +427,18 @@ button:hover{
 .pay-btn{
     color:white;
     background-color:orange;
+    border:none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px black;
+    padding:5px;
+    margin-top:10px;
+    outline: none;
+    cursor:pointer;
+}
+
+
+@media(max-width:925px){
+    .checkout-body{
+        flex-direction:column;
+    }
 }

@@ -58,28 +58,51 @@
     <header>
         <div class="first-header">
             <div class="div1">
-                <p>Amazon</p>
-                <p><i class="fas fa-location"></i>
-                    Deliver to Ghana</p>
+                <div>
+                    <h4 class="amazon">Amazon</h4>
+                    <i class="fa-brands fa-amazon-pay fa-2x"></i>
+                </div>
                 {% if user.is_authenticated %}
-                <p>welcome {{user.username}} </p>
+                <p>Welcome, <em>{{user.username}}.</p>
                 {% else %}
-                <p>welcome, shit Head</p>
+                <p>Welcome,  <em>user . . </em></p>
                 {% endif %}
             </div>
             <div class="div2">
-                <input type="search" name="search" id="inp">
+                <form action="{% url 'search' %}" method=POST>
+                    {% csrf_token %}
+                    <input type="search" name="searched" id="inp" placeholder="search" >
+                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                </form>
+                
             </div>
         </div>
         <div class="second-header">
             <div>
-                <i class="fas fa-bars"></i>
-                <a href="#">All</a>
-                <a href="#">Today's Deals</a>
-                <a href="#">Customer Service</a>
-                <a href="#">Registry</a>
-                <a href="#">Gift Cards</a>
-                <a href="#">Sell</a>
+                <div class="bar-row2">
+                    <a href="#">All</a>
+                    <a href="#">Today's Deals</a>
+                    <a href="#">Customer Service</a>
+                    <a href="#">Registry</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Sell</a>
+                </div>
+                <div class="phone-view">
+                    <input type="checkbox" id="input" class="input1">
+                    <label for="input">
+                        <i class="fas fa-bars bars"></i>
+                    </label>
+                    <div class="bar-row">
+                        <a href="#">All</a>
+                        <a href="#">Today's Deals</a>
+                        <a href="#">Customer Service</a>
+                        <a href="#">Registry</a>
+                        <a href="#">Gift Cards</a>
+                        <a href="#">Sell</a>
+                    </div>
+                </div>
+
+
                 <div class="cure">
                     <a href="cart" class="cart-icon">
                         cart
@@ -94,6 +117,7 @@
                     <a href="register" class="register">Login/register</a>
                     {% endif %}
                 </div>
+                
             </div>
         </div>
     </header>

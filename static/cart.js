@@ -9,13 +9,16 @@ for (let j = 0; j < updateEl.length; j++) {
 
         if(user === 'AnonymousUser'){
             // console.log('Not logged in')
+            alert("item added successfully")
             addCookieItem(productId, action)
+            
         }
         else{
             updateUserOrder(productId, action)
             // console.log("User is logged in, sending data...")
         }
         console.log('USER:', user)
+        alert("item added successfully")
     })
     
 }
